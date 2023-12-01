@@ -89,6 +89,7 @@ if __name__ == "__main__":
     plt.plot(results["Generated cos"], label="Unamplified Cos", color="blue")
     plt.plot(results["Amplified Sin"], label="Amplified Sin, from Fed 2", color="green")
     plt.plot(results["Amplified Cos"], label="Amplified Cos, from Fed 2", color="magenta")
+    plt.xlabel("Time (seconds)")
     plt.legend()
     plt.show()
     
