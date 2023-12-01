@@ -1,0 +1,34 @@
+{
+  "name": "fed2",
+  "core_type": "zmq",
+  "log_level": "warning",
+  "period": 1,
+  "uninterruptible": false,
+  "terminate_on_error": true,
+  "wait_for_current_time_update": true,
+  "publications": [{
+    "global": true,
+    "key": "fed2/amp_sin",
+    "type": "double",
+    "unit": ""
+  },
+
+  {
+    "global": true,
+    "key": "fed2/amp_cos",
+    "type": "double",
+    "unit": ""
+  }],
+  "subscriptions": [{
+    "global": true,
+    "key": "fed1/sin",
+    "type": "double",
+    "unit": "-"
+  },
+  {
+    "global": true,
+    "key": "fed1/cos",
+    "type": "double",
+    "unit": "C"
+  }]
+}

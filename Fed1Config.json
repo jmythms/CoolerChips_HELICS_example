@@ -1,0 +1,37 @@
+{
+  "core_name": "Fed1",
+  "core_type": "zmq",
+  "log_level": "debug",
+  "name": "Fed1",
+  "period": 1,
+  "publications": [
+      {
+        "global": true,
+        "key": "fed1/sin",
+        "type": "double",
+        "unit": "-"
+      },
+      {
+        "global": true,
+        "key": "fed1/cos",
+        "type": "double",
+        "unit": "C"
+      }],
+  "subscriptions": [
+    {
+      "global": true,
+      "key": "fed2/amp_sin",
+      "type": "double",
+      "unit": ""
+    },
+
+    {
+      "global": true,
+      "key": "fed2/amp_cos",
+      "type": "double",
+      "unit": ""
+    }
+  ],
+  "terminate_on_error": true,
+  "uninterruptible": false
+}

@@ -1,0 +1,19 @@
+{
+    "name": "cooler_chips_example_broker",
+    "broker": true,
+    "federates": [
+      {
+        "directory": ".",
+        "exec": "python -u Fed1.py",
+        "host": "localhost",
+        "name": "First_federate"
+      },
+      {
+        "directory": ".",
+        "exec": "python -u Fed2.py",
+        "host": "localhost",
+        "name": "Second_federate"
+      }
+    ]
+  }
+  
