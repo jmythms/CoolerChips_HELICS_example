@@ -15,21 +15,21 @@
         "global": true,
         "key": "fed1/cos",
         "type": "double",
-        "unit": "C"
+        "unit": "-"
       }],
   "subscriptions": [
     {
       "global": true,
       "key": "fed2/amp_sin",
       "type": "double",
-      "unit": ""
+      "unit": "-"
     },
 
     {
       "global": true,
       "key": "fed2/amp_cos",
       "type": "double",
-      "unit": ""
+      "unit": "-"
     }
   ],
   "terminate_on_error": true,
