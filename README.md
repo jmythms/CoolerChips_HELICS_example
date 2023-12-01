@@ -1,4 +1,5 @@
-# This is a very basic HELICS example:
+
+# A very basic HELICS example, and how to setup a basic federate. 
 
 ## How to run:
 
@@ -23,7 +24,7 @@ There are two federates (in our case models), that are running together.
   
 
 The first federate (Fed 1) generates two signals, 
-`sin(pi\*simulation_time/6)` 
+`sin(pi*simulation_time/6)` 
 and 
 `cos(pi*simulation_time/6)`.
 It publishes these values (sends it to HELICS).
@@ -33,5 +34,12 @@ The second federate (Fed 2) is subscribed to these two signals.
 
  - When it receives these signals, it will amplify them (multiply the
    value by 2). 
-   It will then publish these amplified values which will
-   be received by the first federate.
+   It will then publish these amplified values which can be seen by the first federate.
+
+## Expected results when you run this:
+
+![image](https://github.com/jmythms/CoolerChips-2/assets/45446967/ce6e1125-238f-4af3-8c8d-cfb2f7916b1e)
+
+## What should I do with this?
+
+Figure out how to make your model work like in one of the Fedn.py files. ([Example](https://github.com/jmythms/CoolerChips-2/blob/aefb615a4e076054735904efac840f0805a1799b/Fed1.py#L59-L62))
