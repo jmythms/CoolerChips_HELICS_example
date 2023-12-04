@@ -49,7 +49,7 @@ These definitions were taken from or adapted from the official HELICS documentat
 
 ## Expected results when you run this:
 
-![image](https://github.com/jmythms/CoolerChips-2/assets/45446967/ce6e1125-238f-4af3-8c8d-cfb2f7916b1e)
+![image](https://github.com/jmythms/CoolerChips_HELICS_example/assets/45446967/5a9a1a10-f54a-46e1-9db4-24fcf6d26557)
 
 ## What am I expected to do with this?
 
