@@ -35,7 +35,7 @@ if __name__ == "__main__":
     h.helicsFederateEnterExecutingMode(fed)
     logger.debug("Entered HELICS execution mode")
     total_seconds = 24
-    time_interval_seconds = 1  
+    time_interval_seconds = 2  
 
     granted_time = 0
     

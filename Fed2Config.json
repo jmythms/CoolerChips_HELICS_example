@@ -2,7 +2,7 @@
   "name": "fed2",
   "core_type": "zmq",
   "log_level": "warning",
-  "period": 1,
+  "period": 2,
   "uninterruptible": false,
   "terminate_on_error": true,
   "wait_for_current_time_update": true,
