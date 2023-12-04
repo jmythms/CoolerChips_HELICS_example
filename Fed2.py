@@ -7,7 +7,7 @@ import matplotlib.ticker as ticker
 # Good practice to set up logging so we know what is goin on.
 logger = logging.getLogger(__name__)
 logger.addHandler(logging.StreamHandler())
-logger.setLevel(logging.DEBUG) #Check the logs and config.json
+logger.setLevel(logging.DEBUG)  # Check the logs and config.json
 
 # Function to destroy this federate once we've finished the co-simulation.
 def destroy_federate(fed):
@@ -16,11 +16,11 @@ def destroy_federate(fed):
 
 
 if __name__ == "__main__":
-    
+
     ##############  Creating Federate and Pub/Sub messaging  ##################
 
     fed = h.helicsCreateValueFederateFromConfig("Fed2Config.json")
-    
+
     sub_count = h.helicsFederateGetInputCount(fed)
     subid = {}
     for i in range(0, sub_count):
@@ -30,17 +30,16 @@ if __name__ == "__main__":
     pubid = {}
     for i in range(0, pub_count):
         pubid[i] = h.helicsFederateGetPublicationByIndex(fed, i)
-        
+
     ##############  Entering Execution Mode  ##################################
     h.helicsFederateEnterExecutingMode(fed)
     logger.debug("Entered HELICS execution mode")
     total_seconds = 24
-    time_interval_seconds = 2  
+    time_interval_seconds = 2
 
     granted_time = 0
-    
-    results = {"sin": [], "cos": []}
 
+    results = {"sin": [], "cos": []}
 
     ########## Main co-simulation loop ########################################
     logger.debug(f"Entering main co-simulation loop at time {granted_time} seconds")
@@ -50,26 +49,24 @@ if __name__ == "__main__":
         sin = h.helicsInputGetDouble(subid[0])
         cos = h.helicsInputGetDouble(subid[1])
         logger.debug(f"Sin value: {sin}, Cos value: {cos}")
-        
+
         results["sin"].append(sin)
         results["cos"].append(cos)
-        
+
         # Put your logic / model / calculations here
         amplified_sin_value = sin * 2
         amplified_cos_value = cos * 2
-        
+
         # Publish the values to the publications (Or outputs to other federates)
         h.helicsPublicationPublishDouble(pubid[0], amplified_sin_value)
         h.helicsPublicationPublishDouble(pubid[1], amplified_cos_value)
-        
+
         # Time request for the next physical interval to be simulated
         requested_time_seconds = granted_time + time_interval_seconds
         granted_time = h.helicsFederateRequestTime(fed, requested_time_seconds)
-        logger.debug(f"Granted time {granted_time} seconds while requested time {requested_time_seconds} seconds with time interval {time_interval_seconds} seconds")
-
-
-
-        
+        logger.debug(
+            f"Granted time {granted_time} seconds while requested time {requested_time_seconds} seconds with time interval {time_interval_seconds} seconds"
+        )
 
     # Cleaning up HELICS stuff once we've finished the co-simulation.
     destroy_federate(fed)
@@ -83,6 +80,5 @@ if __name__ == "__main__":
     plt.legend()
     ax = plt.gca()
     ax.xaxis.set_minor_locator(ticker.MultipleLocator(1))  # Set minor tick frequency
-    plt.grid(True, which='both', axis='x', color='gray', alpha=0.2)  # Reduced opacity
+    plt.grid(True, which="both", axis="x", color="gray", alpha=0.2)  # Reduced opacity
     plt.show()
-    
