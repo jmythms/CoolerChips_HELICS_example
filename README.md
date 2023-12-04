@@ -16,6 +16,7 @@
 
 There are two federates (in our case models), that are running together.
 
+ - Federate 1 runs on a one second timestep, Federate 2 runs on a two second timestep.
  - The timesteps are being co-ordinated by HELICS. 
  - They are also
    subscribed to each other.
