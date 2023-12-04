@@ -1,6 +1,7 @@
 import helics as h
 import logging
 import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
 import math
 
 
@@ -91,5 +92,9 @@ if __name__ == "__main__":
     plt.plot(results["Amplified Cos"], label="Amplified Cos, from Fed 2", color="magenta")
     plt.xlabel("Time (seconds)")
     plt.legend()
+    ax = plt.gca()
+    ax.xaxis.set_minor_locator(ticker.MultipleLocator(1))  # Set minor tick frequency
+    plt.grid(True, which='both', axis='x', color='gray', alpha=0.2)  # Reduced opacity
+
     plt.show()
     

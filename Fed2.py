@@ -1,7 +1,7 @@
 import helics as h
 import logging
 import matplotlib.pyplot as plt
-import math
+import matplotlib.ticker as ticker
 
 
 # Good practice to set up logging so we know what is goin on.
@@ -81,5 +81,8 @@ if __name__ == "__main__":
     plt.plot(results["cos"], label="Unamplified Cos", color="blue")
     plt.xlabel("Time (seconds)")
     plt.legend()
+    ax = plt.gca()
+    ax.xaxis.set_minor_locator(ticker.MultipleLocator(1))  # Set minor tick frequency
+    plt.grid(True, which='both', axis='x', color='gray', alpha=0.2)  # Reduced opacity
     plt.show()
     
