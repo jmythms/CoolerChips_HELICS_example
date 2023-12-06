@@ -36,6 +36,18 @@ The second federate (Fed 2) is subscribed to these two signals.
    value by 2). 
    It will then publish these amplified values which can be seen by the first federate.
 
+## May I get some basic terminology?
+
+Some basic terminology, taken from the official HELICS page:
+- Federate - An individual simulator that is computing something interesting and communicating with other simulators
+- Core - An object managing the interactions of one or more federates
+- Broker - An object coordinating multiple cores or brokers:
+    - There can be several layers of brokers
+- Root broker - The root broker in the hierarchy
+    - Last chance router
+    - Responsible for determining when to enter initialization mode for the federation
+- Federation - The set of all federates executing together in a single co-simulation
+
 ## What do these files do, can I learn more?
 
 Runner.json: This file tells HELICS to launch three federates named `cooler_chips_example_broker`, `First_federate`, and `Second_federate`. 
